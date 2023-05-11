@@ -1,0 +1,25 @@
+table{
+    border: solid 1px;
+    background-color: red;
+    margin: auto;
+}
+
+th{
+    border: solid 1px;
+    padding: 50px;
+    background-color: gray;
+}
+
+tr{
+    border: solid 1px;
+    padding: 40px;
+}
+
+td{
+    border: solid 1px;
+    padding: 40px;
+}
+
+td:hover{
+    background-color: rgba(150, 146, 146, 0.5);
+}
