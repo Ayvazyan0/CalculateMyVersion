@@ -1,25 +1,42 @@
 table{
-    border: solid 1px;
-    background-color: red;
+    border-radius: 18px;
     margin: auto;
+    background-color: #000;
+    height: 70vh;
+    width: 40vh;
+    font-family: monospace;
 }
 
 th{
-    border: solid 1px;
     padding: 50px;
     background-color: gray;
+    border-radius: 18px;
+    font-size: 2rem;
 }
 
 tr{
-    border: solid 1px;
-    padding: 40px;
+    padding: 30px;
 }
 
 td{
-    border: solid 1px;
-    padding: 40px;
+    padding: 20px;
+    font-size: 2rem;
 }
 
 td:hover{
     background-color: rgba(150, 146, 146, 0.5);
+}
+
+.btn {
+    border-radius: 50px;
+    color: #fff;
+    background-color: rgba(150, 146, 146, 0.5);
+}
+
+.bg-grey{
+    background-color: #a6a6a6;
+}
+
+.bg-orange{
+    background-color: #e97305;
 }

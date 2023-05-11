@@ -1,107 +1,77 @@
 let numbers = document.querySelectorAll('.number')
-let arr = [[ ],[ ],[ ]]
-let k = true
 
-arr[0].innerHTML = ''
-arr[1].innerHTML = ''
-arr[2].innerHTML = ''
 numbers.forEach(element => 
         element.addEventListener('click', (e) => {
-            if(k == true){
-                arr[0].innerHTML += e.target.innerHTML
-                result.innerHTML = arr[0].innerHTML
-                
-            }
-            if(k == false){
-                arr[2].innerHTML = e.target.innerHTML 
-                result.innerHTML += arr[2].innerHTML
-            }
+            result.innerHTML += e.target.innerHTML
         }) 
     )
 
 
 zero.addEventListener('click', (e) => {
-    result.innerHTML += e.target.innerHTML
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('.') && summ == ''){
+        result.innerHTML += e.target.innerHTML + '.'
+    }
+    else(result.innerHTML += e.target.innerHTML)  
 })
 
-clearAll.addEventListener('click', (e) => {
+clearAll.addEventListener('click', () => {
     result.innerHTML = ''
-    arr[0].innerHTML = ''
-    arr[1].innerHTML = ''
-    arr[2].innerHTML = ''
-    
 })
 
-clear.addEventListener('click', (e) => {
-    if(k == true){
-        arr[0].innerHTML = arr[0].innerHTML.substring(0, arr[0].innerHTML.length-1)     
-        result.innerHTML = arr[0].innerHTML
-    }
-    if(k == false){
-        arr[2].innerHTML = arr[2].innerHTML.substring(0, arr[2].innerHTML.length-1)     
-        result.innerHTML = arr[2].innerHTML
-    }
+clear.addEventListener('click', () => {
+    result.innerHTML = result.innerHTML.slice(0, result.innerHTML.length -1)
 })
 
 dot.addEventListener('click', () =>{
-    result.innerHTML += '.'
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('.') && summ != ''){
+        result.innerHTML += '.'
+    }
 }) 
 
 plus.addEventListener('click', ()=>{
-    k = false
-    arr[1].innerHTML = '+'
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('+') && summ != ''){
+        result.innerHTML += '+'
+    }
     
-    result.innerHTML += arr[1].innerHTML
 })
 
 minus.addEventListener('click', ()=>{
-    k = false
-    arr[1].innerHTML = '-'
-    
-    result.innerHTML += arr[1].innerHTML
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('-') && summ != ''){
+        result.innerHTML += '-'
+    }
 })
 
 multiply.addEventListener('click', ()=>{
-    k = false
-    arr[1].innerHTML = '*'
-    
-    result.innerHTML += arr[1].innerHTML
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('*') && summ != ''){
+        result.innerHTML += '*'
+    }
 })
 
 division.addEventListener('click', ()=>{
-    k = false
-    arr[1].innerHTML = '/'
-    
-    result.innerHTML += arr[1].innerHTML
+    let d = result.innerHTML.split(/[-+*\/]/)
+    let summ = d[d.length -1]
+    if(!summ.includes('/') && summ != ''){
+        result.innerHTML += '/'
+    }
 })
 
 equality.addEventListener('click', ()=>{
-    res(arr[0].innerHTML,arr[1].innerHTML,arr[2].innerHTML)
-    
+    if(result.innerHTML != ''){
+        result.innerHTML += '=' + eval(result.innerHTML)
+    }
 })
 
-function res(a, b, c){
-    if(b == '+'){
 
-        x = parseInt(a) + parseInt(c)
-        result.innerHTML += '=' + x
-    }
-    if(b == '-'){
-
-        x = parseInt(a) - parseInt(c)
-        result.innerHTML += '=' + x
-    }
-    if(b == '*'){
-
-        x = parseInt(a) * parseInt(c)
-        result.innerHTML += '=' + x
-    }
-    if(b == '/'){
-
-        x = parseInt(a) / parseInt(c)
-        result.innerHTML += '=' + x
-    }
-}
 
 
  
